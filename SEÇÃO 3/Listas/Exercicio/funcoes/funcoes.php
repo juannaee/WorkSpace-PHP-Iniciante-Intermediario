@@ -40,3 +40,14 @@ function exibiValor($valor)
 {
     return isset($valor) && !empty($valor) ? $valor : "N/D";
 }
+
+function formatadorString(array &$conta) : void
+{
+    $conta["Nome"] = mb_strtoupper($conta["Nome"]);
+
+}
+
+
+
+
+

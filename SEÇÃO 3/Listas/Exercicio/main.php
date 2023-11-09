@@ -33,13 +33,15 @@ $listaFuncionario["Funcionario_3"] =
 sacar(conta: $listaFuncionario["Funcionario_3"], valorSaque: 650);
 $listaFuncionario["Funcionario_2"] =
 depositar(conta: $listaFuncionario["Funcionario_2"], valorDeposito: 500);
+formatadorString($listaFuncionario["Funcionario_2"]);
 
 
 foreach ($listaFuncionario as $i => $funcionario)
 {
+    list("Nome" => $nome, "Documento" => $documento, "Saldo" => $saldo) = $funcionario;
 
     exibiMsg($i . ": ");
-    exibiMsg("Nome: " . exibiValor($funcionario["Nome"]));
+    exibiMsg("Nome: " . exibiValor($nome));
     exibiMsg("Documento: " . exibiValor($funcionario["Documento"]));
     exibiMsg("Saldo: " . exibiValor($funcionario["Saldo"]));
     exibiMsg(" ");
