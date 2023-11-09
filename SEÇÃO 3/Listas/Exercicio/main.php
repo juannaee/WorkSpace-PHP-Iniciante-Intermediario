@@ -1,6 +1,6 @@
 <?php
 
-$path = 'teste/';
+$path = 'funcoes/';
 $file = $path . 'funcoes.php';
 include $file;
 
@@ -28,12 +28,12 @@ $listaFuncionario["Funcionario_3"] = [
     "Documento" => null,
     "Saldo" => 198,
 ];
-{
-    $listaFuncionario["Funcionario_3"] =
-    sacar(conta: $listaFuncionario["Funcionario_3"], valorSaque: 650);
-    $listaFuncionario["Funcionario_2"] =
-    depositar(conta: $listaFuncionario["Funcionario_2"], valorDeposito: 500);
-}
+
+$listaFuncionario["Funcionario_3"] =
+sacar(conta: $listaFuncionario["Funcionario_3"], valorSaque: 650);
+$listaFuncionario["Funcionario_2"] =
+depositar(conta: $listaFuncionario["Funcionario_2"], valorDeposito: 500);
+
 
 foreach ($listaFuncionario as $i => $funcionario)
 {
