@@ -1,0 +1,25 @@
+- Passo a Passo para Iniciar o Servidor Local com PHP:
+
+- Acesse a Pasta do Projeto:
+Navegue até o diretório onde está localizado o seu projeto. 
+Utilize o gerenciador de arquivos do seu sistema operacional para acessar a pasta desejada.
+
+- Inicie o Servidor Local:
+Abra o terminal, seja Git Bash, PowerShell ou CMD, e execute o seguinte comando:
+php -S localhost:8080
+Este comando inicia um servidor local na porta 8080.
+
+- Teste sua Aplicação:
+Abra o navegador de sua escolha e digite na barra de endereços:
+localhost:8080
+Isso abrirá a sua aplicação no servidor local.
+
+- Observação Importante:
+Caso o seu servidor esteja rodando em uma pasta específica (por exemplo, "workspace"), 
+lembre-se de incluir o caminho completo para o arquivo principal.
+- Exemplo:
+http://localhost:8080/SEÇÃO3/Listas/Exercicio/main.php
+Certifique-se de ajustar o caminho conforme a estrutura do seu projeto.
+Ao seguir esses passos, você estará iniciando e testando seu servidor 
+local PHP de maneira eficiente. Certifique-se de adaptar os caminhos e 
+comandos de acordo com a estrutura específica do seu projeto.

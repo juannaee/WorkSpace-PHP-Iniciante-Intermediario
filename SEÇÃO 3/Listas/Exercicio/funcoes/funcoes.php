@@ -34,16 +34,30 @@ function depositar(array $conta, float $valorDeposito): array
 }
 function exibiMsg($msg)
 {
-    echo $msg . PHP_EOL;
+    echo $msg . PHP_EOL . "<br>";
 }
 function exibiValor($valor)
 {
     return isset($valor) && !empty($valor) ? $valor : "N/D";
 }
 
-function formatadorString(array &$conta) : void
+function formatadorString(array &$conta): void
 {
     $conta["Nome"] = mb_strtoupper($conta["Nome"]);
+
+}
+
+function exiberConta($conta): void
+{
+    echo "
+        <br>
+        <li>Titular: " . exibiValor($conta["Nome"]) . "<br>
+            Documento: " . exibiValor($conta["Documento"]) . " <br>
+            Saldo: " . exibiValor($conta["Saldo"]) . " <br>
+                                    
+        </li>
+        <br>
+        ";
 
 }
 
