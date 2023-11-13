@@ -8,7 +8,7 @@ function sacar(array $conta, float $valorSaque): array
     }
     else if ($valorSaque > $conta['Saldo'])
     {
-        exibiMsg("Saque indisponivel");
+        exibiMsg("ERRO: Saque indisponivel");
         return $conta;
     }
     $conta["Saldo"] -= $valorSaque;
@@ -49,11 +49,12 @@ function formatadorString(array &$conta): void
 
 function exiberConta($conta): void
 {
+    ["Nome" => $nome, "Documento" => $documento, "Saldo" => $saldo] = $conta;
+
     echo "
-        <br>
-        <li>Titular: " . exibiValor($conta["Nome"]) . "<br>
-            Documento: " . exibiValor($conta["Documento"]) . " <br>
-            Saldo: " . exibiValor($conta["Saldo"]) . " <br>
+        <li>Titular: " . exibiValor($nome) . "<br>
+            Documento: " . exibiValor($documento) . " <br>
+            Saldo: " . exibiValor($saldo) . " <br>
                                     
         </li>
         <br>
