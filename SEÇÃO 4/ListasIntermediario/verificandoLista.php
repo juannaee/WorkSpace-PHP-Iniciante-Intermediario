@@ -3,11 +3,26 @@
 $lista = [1, 6, 8, 5, 69, 8, 9];
 
 $lista2 = [
-    "numeroUm" => 1,
-    "numeroDois" => 2,
-    "numeroTres" => 3,
+    "Juan" => null,
+    "Tully" => 2,
+    "Bragui" => 3,
 
 ];
+
+var_dump(in_array(2, $lista));
+var_dump(array_search(3, $lista2));
+echo (array_search(2, $lista2) . PHP_EOL);
+
+if (isset($lista2["Juan"]))
+{
+    echo "Juan está na lista" . PHP_EOL;
+}
+else
+{
+    echo "Juan não está na lista ou é nulo" . PHP_EOL;
+}
+
+
 
 // if (is_array($lista))
 // {
