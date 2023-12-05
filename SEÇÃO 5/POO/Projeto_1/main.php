@@ -24,7 +24,7 @@ $teste2->telefoneTitular = "(81)966271411";
 $teste2->saldoTitular = 1000;
 
 
-$teste->transferir(200, $teste2);
+$teste->transferir(9000, $teste2);
 
 
 

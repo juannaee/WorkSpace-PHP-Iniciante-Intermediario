@@ -7,24 +7,20 @@ class Conta
     public float $saldoTitular;
 
 
-    public function sacar($valor)
+    public function sacar(float $valor): void
     {
         if ($valor > $this->saldoTitular)
         {
             echo "Saldo para saque insuficiente!" . PHP_EOL;
+            return;
         }
         else if ($valor == $this->saldoTitular)
         {
             $this->saldoTitular = 0;
-
-        }
-        else
-        {
-            $this->saldoTitular -= $valor;
-
+            return;
         }
 
-
+        $this->saldoTitular -= $valor;
     }
 
     public function transferir(float $valor, Conta $contaDestino): void
@@ -32,16 +28,12 @@ class Conta
         if ($valor > $this->saldoTitular)
         {
             echo "Valor de transição insuficiente!" . PHP_EOL;
-
+            return;
         }
-
         $this->saldoTitular -= $valor;
         $contaDestino->saldoTitular += $valor;
 
-
     }
-
-
 }
 
 ?>
