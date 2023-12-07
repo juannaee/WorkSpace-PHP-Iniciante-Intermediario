@@ -5,13 +5,21 @@ class Conta
     private string $nomeTitular;
     public string $telefoneTitular;
     private float $saldoTitular = 0.0;
-
     private float $limteDeposito = 1_000_000;
 
+    public function __construct(string $cpfTitular, string $nomeTitular)
+    {
 
+        $this->cpfTitular = $cpfTitular;
+        $this->nomeTitular = $this->validarNome($nomeTitular);
 
+    }
 
-    //teste
+    private function validarNome($nomeTitular): string
+    {
+        return strlen($nomeTitular) < 1 ? "N/D" : (strlen($nomeTitular) < 5 ? "Nome invalido" : $nomeTitular);
+    }
+
     public function sacar(float $valor): void
     {
         if ($valor > $this->saldoTitular)
@@ -45,7 +53,8 @@ class Conta
     {
         if ($valor > $this->limteDeposito)
         {
-            echo "SaqueValor acima de". $this->limteDeposito . PHP_EOL;
+            echo "Deposito Indisponivel!" . PHP_EOL . "Valor acima de " . $this->limteDeposito . PHP_EOL;
+            return;
         }
         $this->saldoTitular += $valor;
     }
