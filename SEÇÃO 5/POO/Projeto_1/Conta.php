@@ -1,21 +1,16 @@
 <?php
-class Conta
-{
+class Conta {
     public string $cpfTitular;
-    public string $nomeTitular;
+    private string $nomeTitular;
     public string $telefoneTitular;
-    public float $saldoTitular;
+    private float $saldoTitular = 0.0;
 
 
-    public function sacar(float $valor): void
-    {
-        if ($valor > $this->saldoTitular)
-        {
-            echo "Saldo para saque insuficiente!" . PHP_EOL;
+    public function sacar(float $valor): void {
+        if($valor > $this->saldoTitular) {
+            echo "Saldo para saque insuficiente!".PHP_EOL;
             return;
-        }
-        else if ($valor == $this->saldoTitular)
-        {
+        } else if($valor == $this->saldoTitular) {
             $this->saldoTitular = 0;
             return;
         }
@@ -23,11 +18,23 @@ class Conta
         $this->saldoTitular -= $valor;
     }
 
-    public function transferir(float $valor, Conta $contaDestino): void
-    {
-        if ($valor > $this->saldoTitular)
-        {
-            echo "Valor de transição insuficiente!" . PHP_EOL;
+    public function getNomeTitular() {
+        return $this->nomeTitular;
+
+    }
+
+    public function setNomeTitular($valor): void {
+        $this->nomeTitular = $valor;
+
+    }
+
+    public function depositar($valor): void {
+        $this->saldoTitular += $valor;
+    }
+
+    public function transferir(float $valor, Conta $contaDestino): void {
+        if($valor > $this->saldoTitular) {
+            echo "Valor de transição insuficiente!".PHP_EOL;
             return;
         }
         $this->saldoTitular -= $valor;
