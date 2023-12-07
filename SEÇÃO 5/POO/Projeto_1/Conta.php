@@ -5,10 +5,19 @@ class Conta {
     public string $telefoneTitular;
     private float $saldoTitular = 0.0;
 
+<<<<<<< HEAD
 
     public function sacar(float $valor): void {
         if($valor > $this->saldoTitular) {
             echo "Saldo para saque insuficiente!".PHP_EOL;
+=======
+//teste
+    public function sacar(float $valor): void
+    {
+        if ($valor > $this->saldoTitular)
+        {
+            echo "Saldo para saque insuficiente!" . PHP_EOL;
+>>>>>>> 5bb1a725e10a46e863e0137b522f59d4589eebd3
             return;
         } else if($valor == $this->saldoTitular) {
             $this->saldoTitular = 0;
