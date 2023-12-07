@@ -1,25 +1,27 @@
 <?php
-class Conta {
+class Conta
+{
     public string $cpfTitular;
     private string $nomeTitular;
     public string $telefoneTitular;
     private float $saldoTitular = 0.0;
 
-<<<<<<< HEAD
+    private float $limteDeposito = 1_000_000;
 
-    public function sacar(float $valor): void {
-        if($valor > $this->saldoTitular) {
-            echo "Saldo para saque insuficiente!".PHP_EOL;
-=======
-//teste
+
+
+
+    //teste
     public function sacar(float $valor): void
     {
         if ($valor > $this->saldoTitular)
         {
             echo "Saldo para saque insuficiente!" . PHP_EOL;
->>>>>>> 5bb1a725e10a46e863e0137b522f59d4589eebd3
+
             return;
-        } else if($valor == $this->saldoTitular) {
+        }
+        else if ($valor == $this->saldoTitular)
+        {
             $this->saldoTitular = 0;
             return;
         }
@@ -27,23 +29,32 @@ class Conta {
         $this->saldoTitular -= $valor;
     }
 
-    public function getNomeTitular() {
+    public function getNomeTitular()
+    {
         return $this->nomeTitular;
 
     }
 
-    public function setNomeTitular($valor): void {
+    public function setNomeTitular($valor): void
+    {
         $this->nomeTitular = $valor;
 
     }
 
-    public function depositar($valor): void {
+    public function depositar($valor): void
+    {
+        if ($valor > $this->limteDeposito)
+        {
+            echo "SaqueValor acima de". $this->limteDeposito . PHP_EOL;
+        }
         $this->saldoTitular += $valor;
     }
 
-    public function transferir(float $valor, Conta $contaDestino): void {
-        if($valor > $this->saldoTitular) {
-            echo "Valor de transição insuficiente!".PHP_EOL;
+    public function transferir(float $valor, Conta $contaDestino): void
+    {
+        if ($valor > $this->saldoTitular)
+        {
+            echo "Valor de transição insuficiente!" . PHP_EOL;
             return;
         }
         $this->saldoTitular -= $valor;
