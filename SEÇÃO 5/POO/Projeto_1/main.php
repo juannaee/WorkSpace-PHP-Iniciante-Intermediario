@@ -11,6 +11,7 @@ $teste = new Conta(nomeTitular: "", cpfTitular: "10488775400");
 // $teste->telefoneTitular = "(81)996272911";
 $teste->depositar(500);
 $teste->depositar(99999999);
+$teste->sacar(100);
 // $teste->sacar(2900);
 
 
@@ -20,7 +21,7 @@ $teste->depositar(99999999);
 
 // $teste->transferir(100, $teste2);
 
-
+echo "Valor movimentado " . Conta::getValorMovido() . PHP_EOL;
 
 var_dump($teste);
 // var_dump($teste2);

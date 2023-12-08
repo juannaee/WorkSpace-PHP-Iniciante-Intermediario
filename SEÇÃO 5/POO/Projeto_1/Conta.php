@@ -6,6 +6,7 @@ class Conta
     public string $telefoneTitular;
     private float $saldoTitular = 0.0;
     private float $limteDeposito = 1_000_000;
+    private static $valorMovido = 0.0;
 
     public function __construct(string $cpfTitular, string $nomeTitular)
     {
@@ -35,6 +36,7 @@ class Conta
         }
 
         $this->saldoTitular -= $valor;
+        self::$valorMovido += $valor;
     }
 
     public function getNomeTitular()
@@ -57,6 +59,7 @@ class Conta
             return;
         }
         $this->saldoTitular += $valor;
+        self::$valorMovido += $valor;
     }
 
     public function transferir(float $valor, Conta $contaDestino): void
@@ -68,6 +71,12 @@ class Conta
         }
         $this->saldoTitular -= $valor;
         $contaDestino->saldoTitular += $valor;
+        self::$valorMovido += $valor;
+
+    }
+    public static function getValorMovido()
+    {
+        return self::$valorMovido;
 
     }
 }
